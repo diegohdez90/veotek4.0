@@ -1,0 +1,50 @@
+body{
+	background-color: rgb(0,172,200);
+}
+
+.header, .menu, .register, .horario{
+	background-color: white;
+	padding: 15px;
+	
+}
+
+.header img{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.header{
+	margin-top: 20px;
+}
+
+.menu a{
+	text-decoration: none;
+}
+
+.menu ul li{
+	display: inline;
+	margin: 20px;
+}
+
+.error{
+	background-color: white;
+	color: rgb(0,172,200);
+}
+
+.error img{
+	width: 50%;
+	display:block;
+    margin:auto;
+}
+
+.numero { font-size: 30px; }
+
+.salida td{
+	background-color: #FF0606;
+	color: white;
+}
+
+.entrada td{
+	background-color: #137D29;
+	color: white;
+}
