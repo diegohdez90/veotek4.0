@@ -29,6 +29,10 @@ $usuario = $_GET['usuario'];
 						<th>Hora de entrada</th>
 						<th>Hora de salida</th>
 						<th>Tiempo</th>
+						<th>Hora de entrada</th>
+						<th>Hora de salida</th>
+						<th>Tiempo</th>
+						<th>Puntos</th>
 					</tr>
 					<?php
 						$usuario = $_GET['usuario'];
@@ -47,9 +51,24 @@ $usuario = $_GET['usuario'];
 							$tiempo = $rows['tiempo'];
 							echo "<td>".$tiempo."</td>";
 							$decimal = $rows['tiempo_decimal'];
-							if(!empty($decimal))
-							$total = $total + $decimal;
-							echo "<td>".$decimal."</td>";
+							$entrada = $rows['despues_entrada'];
+							echo "<td>".$entrada."</td>";
+							$salida = $rows['despues_salida'];
+							echo "<td>".$salida."</td>";
+							$despues_tiempo = $rows['despues_tiempo'];
+							echo "<td>".$despues_tiempo."</td>";
+							$despues_decimal = $rows['despues_tiempo_decimal'];
+							$total_dec = $rows['total_decimal'];
+							$en_dia = 0;
+							if(!empty($decimal)){
+								$total = $total + $decimal;
+								$en_dia = $en_dia + $decimal;
+								if(!empty($despues_decimal)){
+								$total = $total + $despues_decimal;
+								$en_dia = $en_dia + $despues_decimal;
+								}
+							}
+							echo "<td>".$en_dia."</td>";
 							echo "</tr>";
 						}
 						

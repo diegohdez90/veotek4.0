@@ -156,7 +156,7 @@
 			}
 
 
-			$insertar_salida = "UPDATE horario SET hora_salida='$hora',tiempo='$tiempo',tiempo_decimal='$res' WHERE personal_idpersonal='$clave' and hora_entrada = '$hora_entrada'";
+			$insertar_salida = "UPDATE horario SET hora_salida='$hora',tiempo='$tiempo',tiempo_decimal='$res',total='$tiempo',total_decimal='$res' WHERE personal_idpersonal='$clave' and hora_entrada = '$hora_entrada'";
 			$result = mysql_query($insertar_salida,$conexion);
 			if($result){
 							echo "<META HTTP-EQUIV='REFRESH' CONTENT='3;URL=index.php'>

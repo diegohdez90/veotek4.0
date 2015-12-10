@@ -21,6 +21,7 @@ body{
 	text-decoration: none;
 }
 
+
 .menu ul li{
 	display: inline;
 	margin: 20px;
@@ -30,14 +31,16 @@ body{
 	background-color: white;
 	color: rgb(0,172,200);
 }
-
 .error img{
 	width: 50%;
 	display:block;
     margin:auto;
 }
 
-.numero { font-size: 30px; }
+.numero { 
+	font-size: 70px;
+	width: 300;
+}
 
 .salida td{
 	background-color: #FF0606;
@@ -47,4 +50,18 @@ body{
 .entrada td{
 	background-color: #137D29;
 	color: white;
+}
+
+
+table{
+	font-size: 13px;
+}
+
+.inicio ul{
+	padding: 0;
+}
+
+.inicio ul li{
+	display: block;	
+	text-align: center;	
 }

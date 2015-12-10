@@ -10,7 +10,7 @@
 
 	<div class="container">
 		<div class="register row">
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div class="row">
 					<img width="100%" align="center" src="img/veotek.png">
 				</div>
@@ -38,7 +38,7 @@
 					?>
 					<?php echo $dia;?> de <?php echo $nombre_mes;?> del <?php echo $annio; ?></h3>
 				</div>
-				<div class="menu row">
+				<div class="inicio row">
 					<ul>
 						<li><a href="index.php">Inicio</a></li>
 						<li><a href="bitacora.php">Bitacora</a></li>
@@ -48,7 +48,7 @@
 
 				<div class="row">
 					<form action="registrar.php" method="post" ctype="multipart/form-data">
-						<p class="text-center"><label>Numero de empleado</label></p><br><input class="numero" placeholder="No. de empleado" name="clave">
+						<p class="text-center"><label>Numero de empleado</label></p><br><input class="numero" placeholder="" name="clave" autofocus>
 					<!--	<label>Nombre de Usuario</label><input type="password" placeholder="Nombre de usuario" name="usuario">-->
 					<!--	<br><input type="submit" value="Registrar hora">-->
 					</form>
@@ -56,7 +56,7 @@
 			</div>
 		
 
-			<div class="col-md-8">
+			<div class="col-md-9">
 				<div class="horario table-responsive">
 					<table class="table table-condensed table-bordered salida">
 						<tr>
