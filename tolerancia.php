@@ -1,4 +1,5 @@
 <?php
+					include 'conexion.php';
 
 					if(date("w")==1){
 						$fin = date("Y-m-d",strtotime("-2 days"));
