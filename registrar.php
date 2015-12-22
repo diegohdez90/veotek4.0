@@ -150,6 +150,7 @@
 				$minutes    = round(($total - ($hours * 60 * 60)) / 60);
 
 				$tiempo = $hours.':'.$minutes;
+				$tiempo = $tiempo.":00";
 
 				$hm = explode(":", $tiempo);
 				$res = ($hm[0] + ($hm[1]/60));

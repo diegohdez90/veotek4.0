@@ -37,6 +37,8 @@
 									echo "<h1>Insertando otra vez ".$ultimo_registro." y ".$fin;
 								}
 							}
+							$reiniciar = "update personal set tolerancia='00:00:00'";
+							$resultado = mysql_query($reiniciar, $conexion) or die(mysql_error());
 						}
 					}
 
