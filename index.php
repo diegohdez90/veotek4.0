@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="icon" href="img/eo.ico" type="image/gif" sizes="16x16">
+<meta http-equiv="Content-type" value="text/html; charset=UTF-8" />
 </head>
 
 
