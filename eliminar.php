@@ -31,7 +31,6 @@ include ('funciones.php');
                 $user = $rows['usuario_idusuario'];
             }
 
-            echo $user;
             $delete = "delete from personal where idpersonal = '$id'";
             $info_delete = mysql_query($delete, $conexion) or die(mysql_error());
 

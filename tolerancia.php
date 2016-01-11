@@ -16,6 +16,13 @@
 								$insert_tol = "insert into tolerancia(nombre,tolerancia,fecha) values('$nombre','$tol','$fin')";
 								$resultado = mysql_query($insert_tol, $conexion) or die(mysql_error());
 							}
+
+							$ultimo = "SELECT fecha FROM tolerancia ORDER BY fecha DESC LIMIT 1";
+							$result = mysql_query($ultimo,$conexion);
+							while ($rs=mysql_fetch_assoc($result)) {
+								$ultimo_registro = $rs['fecha'];
+							}
+							if($fin!=$ultimo_registro)
 							$reiniciar = "update personal set tolerancia='00:00:00'";
 							$resultado = mysql_query($reiniciar, $conexion) or die(mysql_error());
 						}
@@ -34,11 +41,13 @@
 								if($ultimo_registro!=$fin){
 									$insert_tol = "insert into tolerancia(nombre,tolerancia,fecha) values('$nombre','$tol','$fin')";
 									$resultado = mysql_query($insert_tol, $conexion) or die(mysql_error());
-									echo "<h1>Insertando otra vez ".$ultimo_registro." y ".$fin;
+									//echo "<h1>Insertando otra vez ".$ultimo_registro." y ".$fin;
 								}
 							}
-							$reiniciar = "update personal set tolerancia='00:00:00'";
-							$resultado = mysql_query($reiniciar, $conexion) or die(mysql_error());
+							if($fin!=$ultimo_registro){
+								$reiniciar = "update personal set tolerancia='00:00:00'";
+								$resultado = mysql_query($reiniciar, $conexion) or die(mysql_error());
+							}
 						}
 					}
 
