@@ -65,7 +65,6 @@
 					$hm = explode(":", $tiempo);
 					$res = ($hm[0] + ($hm[1]/60));
 
-					$t = $t.':00';
 					$tiempo = $tiempo.":00";
 					$primer = strtotime($t) -strtotime("00:00:00");
 					$segundo = strtotime($tiempo)- strtoupper("00:00:00");
