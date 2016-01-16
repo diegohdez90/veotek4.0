@@ -68,7 +68,8 @@ echo "
 							$usuario = $rows['Usuario'];
 							echo "<td>".$usuario."</td>";
 							$tolerancia = $rows['tolerancia'];
-							echo "<td>".$tolerancia."</td>";
+							if(strtotime($tolerancia) < strtotime("00:10:00")) echo "<td style='background-color:green;color:white'>".$tolerancia."</td>";
+							else echo "<td style='background-color:red;color:white'>".$tolerancia."</td>";
 							echo "<td><a class='btn btn-default	' href='info.php?id=".$rows['ID']."'>Ver informaci&oacute;n</a>";
 							echo " ";
 							echo '<a class="btn btn-success" href="actualizar.php?id='.$rows['ID'].'">Update</a>';
