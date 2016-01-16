@@ -1,8 +1,8 @@
 <?php
 					include 'conexion.php';
 
-					if(date("w")==1){
-						$fin = date("Y-m-d",strtotime("-2 days"));
+					if(date("w")==6){
+						$fin = date("Y-m-d",strtotime("-1 days"));
 						$todas_tolerancias = "SELECT * FROM tolerancia";
 						$result = mysql_query($todas_tolerancias,$conexion);
 						$num_rows = mysql_num_rows($result);
@@ -22,7 +22,6 @@
 							while ($rs=mysql_fetch_assoc($result)) {
 								$ultimo_registro = $rs['fecha'];
 							}
-							if($fin!=$ultimo_registro)
 							$reiniciar = "update personal set tolerancia='00:00:00'";
 							$resultado = mysql_query($reiniciar, $conexion) or die(mysql_error());
 						}
@@ -41,7 +40,6 @@
 								if($ultimo_registro!=$fin){
 									$insert_tol = "insert into tolerancia(nombre,tolerancia,fecha) values('$nombre','$tol','$fin')";
 									$resultado = mysql_query($insert_tol, $conexion) or die(mysql_error());
-									//echo "<h1>Insertando otra vez ".$ultimo_registro." y ".$fin;
 								}
 							}
 							if($fin!=$ultimo_registro){
