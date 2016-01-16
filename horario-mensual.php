@@ -51,10 +51,14 @@ $nombre_mes = $meses[$mes];
 						<th>Hora de entrada</th>
 						<th>Hora de salida</th>
 						<th>Tiempo</th>
+						<th>Hora de entrada</th>
+						<th>Hora de salida</th>
+						<th>Tiempo</th>
+						<th>Total</th>
 					</tr>
 					<?php
 						include('conexion.php');
-						$datos = "select idpersonal,nombre,apellidos,dia_entrada,hora_entrada,hora_salida,tiempo from horario,personal where personal.idpersonal = horario.personal_idpersonal and dia_entrada >= '$first_day' and dia_entrada <= '$last_day' order by dia_entrada,hora_entrada asc";
+						$datos = "select idpersonal,nombre,apellidos,dia_entrada,hora_entrada,hora_salida,tiempo,despues_entrada,despues_salida,despues_tiempo,total from horario,personal where personal.idpersonal = horario.personal_idpersonal and dia_entrada >= '$first_day' and dia_entrada <= '$last_day' order by dia_entrada,hora_entrada asc";
 						$horario = mysql_query($datos, $conexion) or die(mysql_error());
 						$totEmp = mysql_num_rows($horario);
 						while ($rows = mysql_fetch_assoc($horario)) {
@@ -71,6 +75,14 @@ $nombre_mes = $meses[$mes];
 							echo "<td>".$salida."</td>";
 							$tiempo = $rows['tiempo'];
 							echo "<td>".$tiempo."</td>";
+							$entrada = $rows['despues_entrada'];
+							echo "<td>".$entrada."</td>";
+							$salida = $rows['despues_salida'];
+							echo "<td>".$salida."</td>";
+							$tiempo = $rows['despues_tiempo'];
+							echo "<td>".$tiempo."</td>";
+							$total = $rows['total'];
+							echo "<td>".$total."</td>";							
 							echo "</tr>";
 						}
 						
