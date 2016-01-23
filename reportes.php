@@ -33,68 +33,78 @@ include ('funciones.php');
 			</ul>
 		</div>
 		<div class="actividades row ">
+			<div class="col-md-6">
 				<h2>Bitacora</h2>
 
-				<label><b>Personal<b></label><br>
-				<form action="bitacora-personal.php" method="get" enctype="multipart/form-data">
+				<label><b>Personal</b></label><br>
+				<form role="form" action="bitacora-personal.php" method="get" enctype="multipart/form-data">
+					<div class="form-group">
 					<?php
 						include('conexion.php');
 				      	$personal = "SELECT nombre,apellidos,usuario_idusuario FROM personal order by nombre";
 				    	$result = mysql_query($personal, $conexion) or die(mysql_error());
 				    	$totEmp = mysql_num_rows($result);
-				    ?><select id="personal" name="usuario">
+				    ?><select class="form-control" id="personal" name="usuario">
 				    <?php	
 						while ($rows = mysql_fetch_assoc($result)) {
 					?><option value="<?php echo $rows['usuario_idusuario']; ?>"><?php echo $rows['nombre'].' '.$rows['apellidos']; ?></option><?php
 				 		}
 				 	?>
 				 	</select>
-				 	
-			        <input type="submit" id="submit" value="Buscar" >
+				 	</div>
+			        <input class="btn btn-primary" type="submit" id="submit" value="Buscar" >
 			    </form>
 
-				<form action="bitacora-diaria.php" method="get" enctype="multipart/form-data">
-					<label><b>Diario<b></label><br>
-				    <input type="date" name="date">
-			        <input type="submit" id="submit" value="Buscar" >
+				<form role="form" action="bitacora-diaria.php" method="get" enctype="multipart/form-data">
+					<div class="form-group">
+						<label><b>Diario</b></label><br>
+					    <input class="form-control" type="date" name="date">
+					</div>
+			        <input class="btn btn-primary" type="submit" id="submit" value="Buscar" >				    
 			    </form>
 
-				<form action="bitacora-mensual.php" method="get" enctype="multipart/form-data">
-					<label><b>Mensual<b></label><br>
-				    <input type="month" name="month"><input type="submit" id="submit" value="Buscar" ></form>
+				<form role="form" action="bitacora-mensual.php" method="get" enctype="multipart/form-data">
+					<div class="form-group">
+						<label><b>Mensual</b></label><br>
+					    <input class="form-control" type="month" name="month">
+					</div>
+					<input class="btn btn-primary" type="submit" id="submit" value="Buscar" ></form>
+			</div>
 
-			
-		</div>
-
-
-		<div class="row horario">
+			<div class="col-md-6">
 				<h2>Horario</h2>
 
-				<form action="horario-personal.php" method="get" enctype="multipart/form-data">
-					<label><b>Personal<b></label><br>
+				<form role="form" action="horario-personal.php" method="get" enctype="multipart/form-data">
+					<label><b>Personal</b></label><br>
+					<div class="form-group">
 					<?php
 						include('conexion.php');
 				      	$personal = "SELECT nombre,apellidos,idpersonal FROM personal order by nombre";
 				    	$result = mysql_query($personal, $conexion) or die(mysql_error());
 				    	$totEmp = mysql_num_rows($result);
-				    ?><select id="personal" name="usuario">
+				    ?><select class="form-control" id="personal" name="usuario">
 				    <?php	
 						while ($rows = mysql_fetch_assoc($result)) {
 					?><option value="<?php echo $rows['idpersonal']; ?>"><?php echo $rows['nombre'].' '.$rows['apellidos']; ?></option><?php
 				 		}
 				 	?>
 				 	</select>
-				 	
-			        <input type="submit" id="submit" value="Buscar" ></form>
+				 	</div>
+			        <input class="btn btn-primary" type="submit" id="submit" value="Buscar" ></form>
 
-				<form action="horario-diario.php" method="get" enctype="multipart/form-data">
-					<label><b>Diario<b></label><br>
-				    <input type="date" name="date">
-			        <input type="submit" id="submit" value="Buscar" ></form>
+				<form role="form" action="horario-diario.php" method="get" enctype="multipart/form-data">
+					<div class="form-group">
+						<label><b>Diario</b></label><br>
+					    <input class="form-control" type="date" name="date">
+					</div>
+			        <input class="btn btn-primary" type="submit" id="submit" value="Buscar" ></form>
 
-				<form action="horario-mensual.php" method="get" enctype="multipart/form-data">
-					<label><b>Mensual<b></label><br>
-				    <input type="month" name="month"><input type="submit" id="submit" value="Buscar" ></form>
+				<form role="form" action="horario-mensual.php" method="get" enctype="multipart/form-data">
+					<div class="form-group">
+						<label><b>Mensual</b></label><br>
+				    	<input class="form-control"type="month" name="month">
+					</div>
+				    <input class="btn btn-primary" type="submit" id="submit" value="Buscar" ></form>
 			</div>	
 		</div>
 
