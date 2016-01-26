@@ -40,6 +40,7 @@ body{
 .numero { 
 	font-size: 70px;
 	width: 300;
+	height: 100;
 }
 
 .salida td{

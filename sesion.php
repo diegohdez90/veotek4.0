@@ -25,9 +25,9 @@
 			</ul>
 		</div>
 		<div class="register row">
-			<form action="inicio.php" method="post" ctype="multipart/form-data">
-				<label>Numero de empleado</label><input placeholder="Numero de empleado" name="login">
-				<label>Nombre de Usuario</label><input type="password" placeholder="Nombre de usuario" name="password">
-				<input type="submit" value="Iniciar sesi&oacute;n">
+			<form class="form-inline" role="form" action="inicio.php" method="post" ctype="multipart/form-data">
+				<div class="form-group"><label>Numero de empleado</label><input class="form-control" placeholder="Numero de empleado" name="login"></div>
+				<div class="form-group"><label>Nombre de Usuario</label><input class="form-control" type="password" placeholder="Nombre de usuario" name="password"></div>
+				<input class="btn" type="submit" value="Iniciar sesi&oacute;n">
 			</form>
 		</div>

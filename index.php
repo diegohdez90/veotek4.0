@@ -49,7 +49,7 @@
 
 				<div class="row">
 					<form action="registrar.php" method="post" ctype="multipart/form-data">
-						<p class="text-center"><label>Numero de empleado</label></p><br><input class="numero" placeholder="" name="clave" autofocus>
+						<div class="form-group"><p class="text-center"><label>Numero de empleado</label></p><br><input class="form-control  numero" placeholder="" name="clave" autofocus></div>
 					<!--	<label>Nombre de Usuario</label><input type="password" placeholder="Nombre de usuario" name="usuario">-->
 					<!--	<br><input type="submit" value="Registrar hora">-->
 					</form>
